@@ -1,0 +1,7 @@
+[06-04_06:55] cyc 1 | rbd:06:48 START rbd-s1 | kc1:06:53 START kc1-s2 | segsl:06:01 START sage_cora
+[06-04_07:26] cyc 2 | rbd:06:48 START rbd-s1 | kc1:06:53 START kc1-s2 | segsl:06:01 START sage_cora
+[06-04_07:56] cyc 3 | rbd:06:48 START rbd-s1 | kc1:07:27 START kc1-s3 | segsl:06:01 START sage_cora
+[06-04_08:27] cyc 4 | rbd:07:57 START rbd-s2 | kc1:08:01 3070_QUEUE_DONE | segsl:06:01 START sage_cora
+[06-04_08:57] cyc 5 | rbd:07:57 START rbd-s2 | kc1:08:01 3070_QUEUE_DONE | segsl:06:01 START sage_cora
+[06-04_09:28] cyc 6 | rbd:09:05 START rbd-s3 | kc1:08:01 3070_QUEUE_DONE | segsl:06:01 START sage_cora
+[06-04_09:59] cyc 7 | rbd:09:05 START rbd-s3 | kc1:08:01 3070_QUEUE_DONE | segsl:09:46 SEGSL_QUEUE_DONE

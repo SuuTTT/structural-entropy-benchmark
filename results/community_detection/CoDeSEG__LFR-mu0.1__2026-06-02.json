@@ -1,0 +1,79 @@
+{
+  "method": "CoDeSEG",
+  "family": "community_detection",
+  "dataset": "LFR-mu0.1",
+  "upstream_repo": "https://github.com/SELGroup/CoDeSEG",
+  "upstream_commit": "d8ba74f",
+  "harness_git": null,
+  "instance": null,
+  "host": "1d43ff4b68d6",
+  "gpu": null,
+  "started": "2026-06-02T21:13:29",
+  "finished": "2026-06-02T21:13:29",
+  "wallclock_sec": 0.080405,
+  "seeds": [
+    0
+  ],
+  "metrics": {
+    "wallclock": [
+      0.03718852996826172
+    ],
+    "ari": [
+      1.0
+    ],
+    "nmi": [
+      0.9999999999999999
+    ],
+    "modularity": [
+      0.7889688909211742
+    ],
+    "map_equation": [
+      6.875645071636844
+    ],
+    "structural_entropy_2d": [
+      6.213004603588952
+    ],
+    "num_communities": [
+      24.0
+    ]
+  },
+  "summary": {
+    "wallclock": {
+      "mean": 0.03718852996826172,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "ari": {
+      "mean": 1.0,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "nmi": {
+      "mean": 0.9999999999999999,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "modularity": {
+      "mean": 0.7889688909211742,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "map_equation": {
+      "mean": 6.875645071636844,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "structural_entropy_2d": {
+      "mean": 6.213004603588952,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "num_communities": {
+      "mean": 24.0,
+      "ci95": 0.0,
+      "n": 1
+    }
+  },
+  "notes": "WWW2025 SE-game, non-overlapping mode",
+  "deviations": "fed shared graphs (1-based tab edgelist); non-overlapping"
+}

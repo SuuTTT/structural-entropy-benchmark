@@ -1,0 +1,9 @@
+# Harness deps (installed on the rented box, not locally).
+# Method-specific deps (DeSE cu118 wheels, etc.) are installed per repro card.
+networkx>=3.1
+numpy>=1.24
+scipy>=1.10
+scikit-learn>=1.3
+python-igraph>=0.11
+leidenalg>=0.10
+infomap>=2.7

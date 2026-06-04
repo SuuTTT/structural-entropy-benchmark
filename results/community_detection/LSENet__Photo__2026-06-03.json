@@ -1,0 +1,47 @@
+{
+  "method": "LSENet",
+  "family": "community_detection",
+  "dataset": "Photo",
+  "upstream_repo": "https://github.com/RiemannGraph/DSE_clustering",
+  "upstream_commit": null,
+  "harness_git": "abe57ab",
+  "instance": null,
+  "host": "ip-172-31-35-6",
+  "gpu": null,
+  "started": "2026-06-03T23:58:04",
+  "finished": "2026-06-03T23:58:04",
+  "wallclock_sec": 7e-05,
+  "seeds": [
+    0
+  ],
+  "metrics": {
+    "acc": [
+      0.7731
+    ],
+    "nmi": [
+      0.6673
+    ],
+    "ari": [
+      0.5742
+    ]
+  },
+  "summary": {
+    "acc": {
+      "mean": 0.7731,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "nmi": {
+      "mean": 0.6673,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "ari": {
+      "mean": 0.5742,
+      "ci95": 0.0,
+      "n": 1
+    }
+  },
+  "notes": "best-by-NMI; %",
+  "deviations": ""
+}

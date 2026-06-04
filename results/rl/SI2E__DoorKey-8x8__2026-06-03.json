@@ -1,0 +1,39 @@
+{
+  "method": "SI2E",
+  "family": "rl",
+  "dataset": "DoorKey-8x8",
+  "upstream_repo": "https://github.com/SELGroup/SI2E",
+  "upstream_commit": null,
+  "harness_git": "abe57ab",
+  "instance": null,
+  "host": "ip-172-31-35-6",
+  "gpu": null,
+  "started": "2026-06-03T16:37:22",
+  "finished": "2026-06-03T16:37:22",
+  "wallclock_sec": 1.8e-05,
+  "seeds": [
+    2
+  ],
+  "metrics": {
+    "success_rate": [
+      0.94
+    ],
+    "peak_episode_reward": [
+      0.99
+    ]
+  },
+  "summary": {
+    "success_rate": {
+      "mean": 0.94,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "peak_episode_reward": {
+      "mean": 0.99,
+      "ci95": 0.0,
+      "n": 1
+    }
+  },
+  "notes": "modernized gym0.26 (5 patches); PPO 3M frames; success rate rR",
+  "deviations": "gym->gymnasium penv/env/ppo patches"
+}

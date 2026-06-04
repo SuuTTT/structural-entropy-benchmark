@@ -1,0 +1,61 @@
+{
+  "method": "hierarchy-quality",
+  "family": "hierarchy",
+  "dataset": "LFR-mu0.4",
+  "upstream_repo": null,
+  "upstream_commit": null,
+  "harness_git": null,
+  "instance": null,
+  "host": "e9d101b291a3",
+  "gpu": null,
+  "started": "2026-06-04T06:45:16",
+  "finished": "2026-06-04T06:45:16",
+  "wallclock_sec": 9e-06,
+  "seeds": [
+    0
+  ],
+  "metrics": {
+    "SE-agglom": [
+      339468.0
+    ],
+    "average": [
+      348932.0
+    ],
+    "ward": [
+      374617.0
+    ],
+    "Paris": [
+      364662.0
+    ]
+  },
+  "summary": {
+    "SE-agglom": {
+      "mean": 339468.0,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "average": {
+      "mean": 348932.0,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "ward": {
+      "mean": 374617.0,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "Paris": {
+      "mean": 364662.0,
+      "ci95": 0.0,
+      "n": 1
+    }
+  },
+  "notes": "Dasgupta cost (lower=better); SE-agglom vs baselines",
+  "deviations": "",
+  "dasgupta_cost": {
+    "SE-agglom": 339468.0,
+    "average": 348932.0,
+    "ward": 374617.0,
+    "Paris": 364662.0
+  }
+}

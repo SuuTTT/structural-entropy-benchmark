@@ -1,0 +1,79 @@
+{
+  "method": "deDoc",
+  "family": "community_detection",
+  "dataset": "LFR-mu0.1",
+  "upstream_repo": "https://github.com/yinxc/structural-information-minimisation",
+  "upstream_commit": "79f7744",
+  "harness_git": null,
+  "instance": null,
+  "host": "1d43ff4b68d6",
+  "gpu": null,
+  "started": "2026-06-02T21:14:47",
+  "finished": "2026-06-02T21:14:50",
+  "wallclock_sec": 2.997463,
+  "seeds": [
+    0
+  ],
+  "metrics": {
+    "ari": [
+      0.00032346400305683943
+    ],
+    "nmi": [
+      0.6202156618074658
+    ],
+    "modularity": [
+      -0.0009635991817832901
+    ],
+    "map_equation": [
+      11.89303211134094
+    ],
+    "structural_entropy_2d": [
+      9.893185683193797
+    ],
+    "num_communities": [
+      996.0
+    ],
+    "wallclock": [
+      2.893381118774414
+    ]
+  },
+  "summary": {
+    "ari": {
+      "mean": 0.00032346400305683943,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "nmi": {
+      "mean": 0.6202156618074658,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "modularity": {
+      "mean": -0.0009635991817832901,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "map_equation": {
+      "mean": 11.89303211134094,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "structural_entropy_2d": {
+      "mean": 9.893185683193797,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "num_communities": {
+      "mean": 996.0,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "wallclock": {
+      "mean": 2.893381118774414,
+      "ci95": 0.0,
+      "n": 1
+    }
+  },
+  "notes": "deDoc(E) on shared graph",
+  "deviations": ""
+}

@@ -1,0 +1,55 @@
+{
+  "method": "SEP",
+  "family": "graph_learning",
+  "dataset": "PROTEINS",
+  "upstream_repo": "https://github.com/Wu-Junran/SEP",
+  "upstream_commit": null,
+  "harness_git": "abe57ab",
+  "instance": null,
+  "host": "ip-172-31-35-6",
+  "gpu": null,
+  "started": "2026-06-03T23:58:04",
+  "finished": "2026-06-03T23:58:04",
+  "wallclock_sec": 6.6e-05,
+  "seeds": [
+    0
+  ],
+  "metrics": {
+    "val_acc": [
+      0.7613
+    ],
+    "val_acc_std": [
+      0.0623
+    ],
+    "test_acc": [
+      0.8018
+    ],
+    "test_acc_std": [
+      0.0598
+    ]
+  },
+  "summary": {
+    "val_acc": {
+      "mean": 0.7613,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "val_acc_std": {
+      "mean": 0.0623,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "test_acc": {
+      "mean": 0.8018,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "test_acc_std": {
+      "mean": 0.0598,
+      "ci95": 0.0,
+      "n": 1
+    }
+  },
+  "notes": "modernized PyG2.5",
+  "deviations": ""
+}

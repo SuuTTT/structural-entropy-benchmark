@@ -1,0 +1,47 @@
+{
+  "method": "LSENet",
+  "family": "community_detection",
+  "dataset": "cora",
+  "upstream_repo": "https://github.com/RiemannGraph/DSE_clustering",
+  "upstream_commit": null,
+  "harness_git": "abe57ab",
+  "instance": null,
+  "host": "ip-172-31-35-6",
+  "gpu": null,
+  "started": "2026-06-03T23:58:04",
+  "finished": "2026-06-03T23:58:04",
+  "wallclock_sec": 6.6e-05,
+  "seeds": [
+    0
+  ],
+  "metrics": {
+    "acc": [
+      0.6311
+    ],
+    "nmi": [
+      0.49479999999999996
+    ],
+    "ari": [
+      0.4178
+    ]
+  },
+  "summary": {
+    "acc": {
+      "mean": 0.6311,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "nmi": {
+      "mean": 0.49479999999999996,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "ari": {
+      "mean": 0.4178,
+      "ci95": 0.0,
+      "n": 1
+    }
+  },
+  "notes": "best-by-NMI; %",
+  "deviations": ""
+}

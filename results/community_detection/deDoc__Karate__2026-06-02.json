@@ -1,0 +1,79 @@
+{
+  "method": "deDoc",
+  "family": "community_detection",
+  "dataset": "Karate",
+  "upstream_repo": "https://github.com/yinxc/structural-information-minimisation",
+  "upstream_commit": "79f7744",
+  "harness_git": null,
+  "instance": null,
+  "host": "1d43ff4b68d6",
+  "gpu": null,
+  "started": "2026-06-02T21:14:44",
+  "finished": "2026-06-02T21:14:44",
+  "wallclock_sec": 0.235018,
+  "seeds": [
+    0
+  ],
+  "metrics": {
+    "ari": [
+      0.015144766146993319
+    ],
+    "nmi": [
+      0.33962836319131434
+    ],
+    "modularity": [
+      -0.016791289518562243
+    ],
+    "map_equation": [
+      6.427070196194175
+    ],
+    "structural_entropy_2d": [
+      4.4825964058711545
+    ],
+    "num_communities": [
+      31.0
+    ],
+    "wallclock": [
+      0.22901535034179688
+    ]
+  },
+  "summary": {
+    "ari": {
+      "mean": 0.015144766146993319,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "nmi": {
+      "mean": 0.33962836319131434,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "modularity": {
+      "mean": -0.016791289518562243,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "map_equation": {
+      "mean": 6.427070196194175,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "structural_entropy_2d": {
+      "mean": 4.4825964058711545,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "num_communities": {
+      "mean": 31.0,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "wallclock": {
+      "mean": 0.22901535034179688,
+      "ci95": 0.0,
+      "n": 1
+    }
+  },
+  "notes": "deDoc(E) on shared graph",
+  "deviations": ""
+}

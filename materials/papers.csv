@@ -1,0 +1,105 @@
+key,title,authors_short,year,venue,venue_type,category,subcategory,code_url,arxiv_id,in_bib,benchmarked,notes
+Li2016,Structural Information and Dynamical Complexity of Networks,Li et al.,2016,IEEE Trans. Inf. Theory,journal,theory,foundation,,,yes,no,Seminal SE paper
+Li2018,Structure Entropy and Resistor Graphs,Li et al.,2018,arXiv,preprint,theory,foundation,,1801.03404,yes,no,
+li2024book,Science of Artificial Intelligence: Mathematical Principles,Li,2024,(Book),book,theory,foundation,,,yes,no,ISPAI book
+li2015strategiesForsecurity,Strategies for network security,Li et al.,2015,Science China Inf. Sci.,journal,theory,foundation,,,yes,no,
+li2016securitytheory,A theory of network security: Principles of natural selection,Li et al.,2016,Internet Mathematics,journal,theory,foundation,,,yes,no,
+yang2024incremental,Incremental measurement of structural entropy for dynamic graphs,Yang et al.,2024,Artificial Intelligence,journal,theory,extension,,,yes,no,Dynamic graph incremental SE
+cao2024multi,Multi-Relational Structural Entropy,Cao et al.,2024,UAI,conference,theory,extension,,,yes,no,Multi-relational extension
+yaopan2019flowDirected,Flow-based clustering on directed graphs: A structural entropy approach,Yao & Pan,2019,IEEE Access,journal,theory,extension,,,yes,no,Directed SE
+wxb2024rwedirected,RWE: A Random Walk Based Graph Entropy for Structural Complexity,Wu et al.,2024,IEEE TNSE,journal,theory,extension,,,yes,no,Directed SE; connection to VNE
+wxb2023findingThesource,Finding the source in networks: an approach based on structural information (ITE),Wu et al.,2023,ACM TOIT,journal,theory,extension,,,yes,no,Infected-tree entropy
+huang2024structuralProbCoding,Structural Entropy Guided Probabilistic Coding,Huang et al.,2025,AAAI,conference,theory,extension,,,yes,no,key year=2024; AAAI 2025
+liu2022similaritygap,On the similarity between von Neumann graph entropy and structural entropy,Liu et al.,2022,IEEE Trans. Inf. Theory,journal,theory,extension,,,yes,no,VNE–SE gap theorem
+ljm2021improvingTogetherness,Improving togetherness using structural entropy,Li et al.,2021,MobiCASE,conference,theory,extension,,,yes,no,Togetherness metric
+shannon1948mathematical,A mathematical theory of communication,Shannon,1948,Bell System Tech. J.,journal,misc,related-theory,,,yes,no,
+tishby2000information,The information bottleneck method,Tishby et al.,2000,Allerton,conference,misc,related-theory,,0004057,yes,no,
+rissanen1978modeling,Modeling by shortest data description (MDL),Rissanen,1978,Automatica,journal,misc,related-theory,,,yes,no,
+dasgupta2016cost,A cost function for similarity-based hierarchical clustering,Dasgupta,2016,STOC,conference,misc,related-theory,,,yes,no,
+fortunato2010community,Community detection in graphs,Fortunato,2010,Physics Reports,journal,misc,related-theory,,,yes,no,Community detection survey; cited for topology/ground-truth mismatch
+traag2019leiden,From Louvain to Leiden: guaranteeing well-connected communities,Traag et al.,2019,Scientific Reports,journal,misc,baseline,,,yes,no,Leiden community detection baseline
+shi2000normalized,Normalized cuts and image segmentation,Shi & Malik,2000,IEEE TPAMI,journal,misc,baseline,,,yes,no,Spectral normalized-cut baseline
+ng2002spectral,On spectral clustering: analysis and an algorithm,Ng et al.,2002,NeurIPS,conference,misc,baseline,,,yes,no,Spectral clustering baseline
+ying2018diffpool,Hierarchical graph representation learning with differentiable pooling,Ying et al.,2018,NeurIPS,conference,misc,baseline,,,yes,no,Deep graph pooling baseline
+bianchi2020mincutpool,Spectral clustering with graph neural networks for graph pooling,Bianchi et al.,2020,ICML,conference,misc,baseline,,,yes,no,MinCutPool baseline
+tsitsulin2020dmon,Graph clustering with graph neural networks,Tsitsulin et al.,2020,ICLR,conference,misc,baseline,,,yes,no,DMoN deep graph clustering baseline
+pearl2009causality,"Causality: models, reasoning and inference",Pearl,2009,(Book),book,misc,related-theory,,,yes,no,
+li2018dedoc,Decoding topologically associating domains with ultra-low resolution Hi-C data (deDoc),Li et al.,2018,Nature Communications,journal,algorithms,combinatorial,https://github.com/yinxc/structural-information-minimisation,,yes,yes,Java; O(N log^2 N); founding SE algorithm
+li2023dedoc2,DeDoc2 Identifies and Characterizes the Hierarchy and Dynamics of Chromatin,Li et al.,2023,Advanced Science,journal,algorithms,combinatorial,https://github.com/zengguangjie/deDoc2,,yes,no,Java
+pan2021information,An Information-theoretic Perspective of Hierarchical Clustering (HCSE),Pan et al.,2021,arXiv,preprint,algorithms,combinatorial,https://github.com/Wu-Junran/SEP,2108.06036,yes,yes,Early HCSE preprint; code released with SEP
+wu2022pooling,Structural Entropy Guided Graph Hierarchical Pooling (SEP),Wu et al.,2022,ICML,conference,graph-learning,pooling,https://github.com/Wu-Junran/SEP,,yes,yes,Global structural-entropy-guided graph pooling
+pan2025hcsegraphs,An Information-theoretic Perspective of Hierarchical Clustering on Graphs,Pan et al.,2025,UAI,conference,graph-learning,pooling,https://github.com/Hardict/HCSE,,yes,no,Latest public graph version of HCSE with OpenReview discussion and LaTeX source
+huang2024sec,SEC: More Accurate Clustering Algorithm via Structural Entropy,Huang et al.,2024,AAAI,conference,algorithms,combinatorial,,,yes,no,AAAI 2024
+zeng2024semiSSE,Semi-Supervised Clustering via Structural Entropy with Pairwise Constraints (SSE),Zeng et al.,2024,SDM,conference,algorithms,constrained,https://github.com/SELGroup/SSE,,yes,no,Requires labels; excluded from unsupervised benchmark
+zeng2024scalableSSSE,Scalable Semi-Supervised Clustering Via Structural Entropy (SSSE),Zeng et al.,2025,IEEE TKDE,journal,algorithms,constrained,https://github.com/SELGroup/SSSE,,yes,no,Requires labels
+zhang2021supertad,SuperTAD: robust detection of hierarchically topologically associating domains,Zhang et al.,2021,Genome Biology,journal,algorithms,constrained,https://github.com/deepomicslab/SuperTAD,,yes,no,Hi-C contiguity constraint
+ling2024supertad2,SuperTAD-Fast: Accelerating Topologically Associating Domain Identification,Ling et al.,2024,J. Computational Biology,journal,algorithms,constrained,https://github.com/deepomicslab/SuperTAD,,yes,no,Hi-C contiguity
+chen2022pyseat,Incorporating cell hierarchy to decipher the functional diversity of single cells (PYSEAT),Chen et al.,2022,Nucleic Acids Research,journal,algorithms,constrained,https://github.com/deepomicslab/SEAT,,yes,no,Single-cell; Hi-C contiguity
+sun2024lsenet,LSEnet: Lorentz Structural Entropy Neural Network for Deep Graph Clustering,Sun et al.,2024,ICML,conference,algorithms,neural,https://github.com/ZhenhHuang/LSEnet,,yes,yes,Differentiable SE; hyperbolic
+zhang2025dese,Unsupervised Graph Clustering with Deep Structural Entropy (DeSE),Zhang et al.,2025,KDD,conference,algorithms,neural,,,yes,no,No public code at submission
+xian2025communitySEGame,Community Detection in Large-Scale Complex Networks via SE Game (CoDeSEG),Xian et al.,2025,WWW,conference,algorithms,constrained,https://github.com/SELGroup/CoDeSEG,,yes,no,Overlapping communities; excluded from disjoint benchmark
+zeng2026hypcse,Hyperbolic Continuous Structural Entropy for Hierarchical Clustering,Zeng et al.,2026,AAAI,conference,algorithms,neural,,,yes,no,AAAI 2026
+wu2023sega,SEGA: Structural Entropy Guided Anchor View for Graph Contrastive Learning,Wu et al.,2023,ICML,conference,graph-learning,contrastive,,,yes,no,
+zou2023segsl,SE-GSL: A General and Effective Graph Structure Learning Framework via SE,Zou et al.,2023,WWW,conference,graph-learning,structure-learning,,,yes,no,
+duan2024structuralGSL,Structural Entropy Based Graph Structure Learning for Node Classification,Duan et al.,2024,AAAI,conference,graph-learning,structure-learning,,,yes,no,
+wxb2024hi-part,Hi-PART: Going Beyond Graph Pooling with Hierarchical Partition Tree for Graph-Level RL,Wu et al.,2024,ACM TKDD,journal,graph-learning,pooling,,,yes,yes,Core is SE-based hierarchical partition tree
+wang2023user,USER: Unsupervised Structural Entropy-based Robust Graph Neural Network,Wang et al.,2023,AAAI,conference,graph-learning,structure-learning,,,yes,no,
+zhu2023HiTIN,HiTIN: Hierarchy-aware Tree Isomorphism Network for Hierarchical Text Classification,Zhu et al.,2023,ACL,conference,graph-learning,hierarchical-text,,,yes,no,
+yang2024graphkernal,Hierarchical Abstracting Graph Kernel,Yang et al.,2024,IEEE TKDE,journal,graph-learning,structure-learning,,,yes,no,
+li2023graphMeetsLLM,A survey of graph meets large language model: Progress and future directions,Li et al.,2024,IJCAI,conference,graph-learning,survey,,,yes,no,Related survey
+hou2025sego,Structural Entropy Guided Unsupervised Graph Out-Of-Distribution Detection,Hou et al.,2025,AAAI,conference,graph-learning,ood,,,yes,no,AAAI 2025
+liu2025sihtc,Hierarchical Text Classification Optimization via Structural Entropy and Singular Smoothing,Liu et al.,2025,IEEE TKDE,journal,graph-learning,hierarchical-text,,,yes,no,TKDE 2025
+chen2026semeta,Structural Entropy Guided Meta-Learning for Few-Shot Node Classification,Chen et al.,2026,IEEE TKDE,journal,graph-learning,classification,,,yes,no,TKDE 2026
+xie2025ses,Structural-Entropy-Based Sample Selection for Efficient and Effective Learning,Xie et al.,2025,ICLR,conference,graph-learning,sample-selection,,,yes,no,ICLR 2025
+zeng2023effective,Effective and stable role-based multi-agent collaboration via structural information,Zeng et al.,2023,AAAI,conference,rl,marl,,,yes,no,
+zeng2023hierarchicalSISA,Hierarchical state abstraction based on structural information principles (SISA),Zeng et al.,2023,IJCAI,conference,rl,decision-making,,,yes,no,
+zeng2024effectiveSI2E,Effective Exploration Based on the Structural Information Principle (SI2E),Zeng et al.,2024,NeurIPS,conference,rl,exploration,,,yes,no,
+su2025emergencecollab,Emergence of Cooperation in Multi-Agent Reinforcement Learning via Structural Entropy,Su et al.,2025,SDM,conference,rl,marl,,,yes,no,
+zeng2025sidmJMLR,Hierarchical Decision Making Based on Structural Information Principles (SIDM),Zeng et al.,2025,JMLR,journal,rl,decision-making,,,yes,no,
+zeng2025si2af,Structural Information-based Adversarial Framework for Graph News Detection (SI2AF),Zeng et al.,2025,KDD,conference,applications,social-bot,,,yes,no,News detection; adversarial robustness
+huang2025MASGCN,Multi-View Attention Syntactic Enhanced GCN for Sentiment Analysis (MASGCN),Huang et al.,2025,DASFAA,conference,rl,marl,,,yes,no,
+zeng2025sihd,Structural Information-based Hierarchical Diffusion for Offline Reinforcement Learning,Zeng et al.,2025,NeurIPS,conference,rl,offline,,,yes,no,NeurIPS 2025
+zeng2026siamd,Proactive Bot Detection Based on Structural Information Principles,Zeng et al.,2026,IEEE TPAMI,journal,applications,social-bot,https://github.com/SELGroup/SIAMD,,yes,no,TPAMI 2026 SIAMD journal version with code
+yang2024sebot,SeBot: Structural Entropy Guided Multi-View Contrastive Learning for Social Bot Detection,Yang et al.,2024,KDD,conference,applications,social-bot,,,yes,no,
+peng2024zjyun,Unsupervised Social Bot Detection via Structural Information Theory (UnDBot),Peng et al.,2024,ACM TOIS,journal,applications,social-bot,,,yes,no,key = peng2024zjyun in bib
+zeng2024socialbots,Adversarial Socialbots Modeling Based on Structural Information Principles,Zeng et al.,2024,AAAI,conference,applications,social-bot,,,yes,no,
+yang2023MGEDE,Minimum Entropy Principle Guided Graph Neural Networks for Event Detection,Yang et al.,2023,WSDM,conference,applications,event-detection,,,yes,no,
+yang2024eventdetect,Adaptive Differentially Private Structural Entropy Minimization for Unsupervised Social Event Detection,Yang et al.,2024,CIKM,conference,applications,event-detection,,,yes,no,ADP-SEMEvent
+cao2024socialevent,Hierarchical and Incremental Structural Entropy Minimization for Unsupervised Social Event Detection,Cao et al.,2024,AAAI,conference,applications,event-detection,,,yes,no,
+yu2024hyperSED,Towards Effective Efficient and Unsupervised Social Event Detection (HyperSED),Yu et al.,2024,AAAI 2025,conference,applications,event-detection,,,yes,no,key year=2024; AAAI 2025
+zou2024hierrecGAD,A Structural Information Guided Hierarchical Reconstruction for Graph Anomaly Detection,Zou et al.,2024,CIKM,conference,applications,anomaly-detection,,,yes,no,CIKM 2024
+yang2026seinevent,Structural Entropy Guided Incremental Learning for Open-World Multimodal Social Event Detection,Yang et al.,2026,AAAI,conference,applications,event-detection,,,yes,no,AAAI 2026
+liu2026ragsede,Effective and Unsupervised Social Event Detection and Evolution via RAG and Structural Entropy,Liu et al.,2026,arXiv,preprint,applications,event-detection,,2601.12035,yes,no,Currently available as arXiv preprint
+li2021detoki,DeTOKI identifies and characterizes the dynamics of chromatin TADs,Li et al.,2021,Genome Biology,journal,applications,bioinformatics,,,yes,no,
+li2016cancer,Three-dimensional gene map of cancer cell types: Structural entropy minimization,Li et al.,2016,Scientific Reports,journal,applications,bioinformatics,,,yes,no,
+zeng2023lesion,Unsupervised skin lesion segmentation via structural entropy optimization,Zeng et al.,2023,ICDM,conference,applications,bioinformatics,,,yes,no,
+xie2025superpixel,Hierarchical Superpixel Segmentation via Structural Information Theory (SIT-HSS),Xie et al.,2025,SDM,conference,applications,bioinformatics,,,yes,no,
+wang2024secodecSpeech,SECodec: Structural Entropy-based Compressive Speech Representation Codec,Wang et al.,2024,AAAI 2025,conference,applications,speech,,,yes,no,key year=2024; AAAI 2025
+wang2025voice,Voice Conversion via Structural Entropy,Wang et al.,2025,ICASSP,conference,applications,speech,,,yes,no,
+wxb2022scientificxray,Scientific X-ray: Scanning and quantifying the idea evolution in scientific papers,Wu et al.,2022,PLoS ONE,journal,applications,knowledge,,,yes,no,
+wang2023quantifyingKnowledge,Quantifying knowledge from the perspective of information structure,Wang et al.,2023,PLoS ONE,journal,applications,knowledge,,,yes,no,
+zhao2025sese,SeSE: Black-Box Uncertainty Quantification for Large Language Models Based on Structural Information Theory,Zhao et al.,2025,arXiv,preprint,applications,llm,,2511.16275,yes,no,Currently available as arXiv preprint
+ye2026fairgse,FairGSE: Fairness-Aware Graph Neural Network Without High False Positive Rates,Ye et al.,2026,AAAI,conference,applications,fairness,,,yes,no,Maximizes 2D-SE for fairness-FPR trade-off
+zou2024transformer,MultiSPANS: A Multi-range Spatial-temporal Transformer Network for Traffic Forecast,Zou et al.,2024,WSDM,conference,applications,timeseries,,,yes,no,Traffic forecasting via structural-entropy-regularized spatio-temporal modeling
+newman2004findingmodularity,Finding and evaluating community structure in networks (Modularity),Newman & Girvan,2004,Physical Review E,journal,misc,baseline,,,yes,yes,Louvain/modularity baseline
+rosvall2008maps,Maps of random walks on complex networks reveal community structure (Infomap),Rosvall & Bergstrom,2008,PNAS,journal,misc,baseline,,,yes,yes,Infomap baseline
+page1999pagerank,The PageRank citation ranking: Bringing order to the web,Page et al.,1999,(Tech Report),misc,misc,baseline,,,yes,no,
+pons2005randomwalkCommunity,Computing communities in large networks using random walks,Pons & Latapy,2005,ISCIS,conference,misc,baseline,,,yes,no,
+pons2006computing,Computing communities in large networks using random walks (journal ver.),Pons & Latapy,2006,J. Graph Algorithms Appl.,journal,misc,baseline,,,yes,no,
+su2025ijcai,Structural Entropy and Its Applications: A Survey,Su et al.,2025,IJCAI,conference,misc,survey,,,yes,no,IJCAI 2025 survey; anchor reference
+song2022mutualBNCV,Mutual information based Bayesian graph neural network for fair clustering,Song et al.,2022,UAI,conference,misc,related-work,,,yes,no,
+liu2019rem,REM: From structural entropy to community structure deception,Liu et al.,2019,NeurIPS,conference,misc,related-work,,,yes,no,
+guo2025deepseek,DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via RL,Guo et al.,2025,arXiv,preprint,misc,related-work,,2501.12948,yes,no,
+openai_o3_mini,OpenAI o3-mini: Pushing the frontier of cost-effective reasoning,OpenAI,2025,(Technical Report),misc,misc,related-work,,,yes,no,
+Zhang2021,A Structural Entropy Measurement Principle of Propositional Formulas in Conjunctive Normal Form,Zhang et al.,2021,Entropy,journal,theory,extension,,,yes,no,SE applied to logic/SAT formulas
+li2025eden,Toward Data-centric Directed Graph Learning: An Entropy-driven Approach (EDEN),Li et al.,2025,ICML,conference,graph-learning,structure-learning,,,yes,no,Directed graph; entropy-driven data-centric approach
+isosel2025,IsoSEL: Isometric Structural Entropy Learning for Deep Graph Clustering in Hyperbolic Space,Sun et al.,2025,arXiv,preprint,algorithms,neural,,2504.09970,yes,no,Currently available as arXiv preprint
+lancet2025,LANCET: Neural Intervention via Structural Entropy for Mitigating Faithfulness Hallucinations in LLMs,Wang et al.,2026,arXiv,preprint,applications,llm,,2601.01401,yes,no,Currently available as arXiv preprint
+sehfs2025,SEHFS: Structural Entropy-Guided High-Order Correlation Learning for Multi-View Multi-Label Feature Selection,Peng et al.,2026,arXiv,preprint,graph-learning,structure-learning,,2603.03022,yes,no,Currently available as arXiv preprint
+se_dialogue_sentiment2025,Dialogues Aspect-Based Sentiment Quadruple Extraction via Structural Entropy Minimization Partitioning,Peng et al.,2025,arXiv,preprint,applications,nlp,,2508.05023,yes,no,Currently available as arXiv preprint
+se_contrastive_nc2024,Structural Entropy Based Graph Contrastive Learning for Node Classification,Zhang et al.,2025,Adaptive Behavior,journal,graph-learning,contrastive,,,yes,no,Journal version indexed in 2025
+se_relation_extraction2025,Structural Entropy Guided Relation Extraction on Adaptive Graph Structure,Wang et al.,2026,Pattern Recognition,journal,applications,nlp,,,yes,no,Pattern Recognition 2026
+se_hypergraph_rec2025,Enhanced Pre-Training for Recommendation via Hypergraph Structural Entropy,Zhang et al.,2025,ACM Trans. Inf. Syst.,journal,applications,recommendation,,,yes,no,TOIS 2025
+se_timeseries2025,Structural Entropy Based Spatio-Temporal Sequence Forecasting,Liu et al.,2025,DASFAA,conference,applications,timeseries,,,yes,no,DASFAA 2025
+se_infrared2025,Breaking Degradation Coupling: A Structural Entropy Guided Decoupled Framework and Benchmark for Infrared Enhancement,Li et al.,2026,arXiv,preprint,applications,vision,,2604.22886,yes,no,Currently available as arXiv preprint
+se_marl_hierarchical2025,Structural Entropy Guided Hierarchical Symmetric Multi-Agent Reinforcement Learning,Tian et al.,2026,Expert Syst. Appl.,journal,rl,marl,,,yes,no,Expert Systems with Applications 2026

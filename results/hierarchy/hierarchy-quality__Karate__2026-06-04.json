@@ -1,0 +1,61 @@
+{
+  "method": "hierarchy-quality",
+  "family": "hierarchy",
+  "dataset": "Karate",
+  "upstream_repo": null,
+  "upstream_commit": null,
+  "harness_git": null,
+  "instance": null,
+  "host": "e9d101b291a3",
+  "gpu": null,
+  "started": "2026-06-04T06:45:14",
+  "finished": "2026-06-04T06:45:14",
+  "wallclock_sec": 1e-05,
+  "seeds": [
+    0
+  ],
+  "metrics": {
+    "SE-agglom": [
+      2304.0
+    ],
+    "average": [
+      2277.0
+    ],
+    "ward": [
+      2362.0
+    ],
+    "Paris": [
+      2625.0
+    ]
+  },
+  "summary": {
+    "SE-agglom": {
+      "mean": 2304.0,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "average": {
+      "mean": 2277.0,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "ward": {
+      "mean": 2362.0,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "Paris": {
+      "mean": 2625.0,
+      "ci95": 0.0,
+      "n": 1
+    }
+  },
+  "notes": "Dasgupta cost (lower=better); SE-agglom vs baselines",
+  "deviations": "",
+  "dasgupta_cost": {
+    "SE-agglom": 2304.0,
+    "average": 2277.0,
+    "ward": 2362.0,
+    "Paris": 2625.0
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "method": "DeSE",
+  "family": "community_detection",
+  "dataset": "Cora",
+  "upstream_repo": "https://github.com/SELGroup/DeSE",
+  "upstream_commit": "6292c0c",
+  "harness_git": null,
+  "instance": null,
+  "host": "71d63121420b",
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "started": "2026-06-02T18:41:33",
+  "finished": "2026-06-02T19:31:27",
+  "wallclock_sec": 2994.304879,
+  "seeds": [
+    9999,
+    1000,
+    1001,
+    1002,
+    1003
+  ],
+  "metrics": {
+    "nmi": [
+      0.5788173349698446,
+      0.48469764912227276,
+      0.523373471044865,
+      0.45425995669417085,
+      0.520670108794508
+    ],
+    "ari": [
+      0.5221677222300973,
+      0.4087753114168765,
+      0.47899640515208963,
+      0.35764443349799196,
+      0.41600348889385064
+    ],
+    "acc": [
+      0.7485228951255539,
+      0.629615952732644,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "f1": [
+      0.7093508098724169,
+      0.5782392959773883,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "summary": {
+    "nmi": {
+      "mean": 0.5123637041251322,
+      "ci95": 0.04099107572821517,
+      "n": 5
+    },
+    "ari": {
+      "mean": 0.43671747223818114,
+      "ci95": 0.05638472783600688,
+      "n": 5
+    },
+    "acc": {
+      "mean": 0.2756277695716396,
+      "ci95": 0.33286820154979146,
+      "n": 5
+    },
+    "f1": {
+      "mean": 0.25751802116996103,
+      "ci95": 0.311745254793849,
+      "n": 5
+    }
+  },
+  "notes": "KDD2025; faithful tuned-seed run + extra seeds for CI",
+  "deviations": "device='cpu'->--gpu; args.dataset='Photo' override removed; SE_SEED env honored for CI seeds"
+}

@@ -1,0 +1,55 @@
+{
+  "method": "SEP",
+  "family": "graph_learning",
+  "dataset": "NCI1",
+  "upstream_repo": "https://github.com/Wu-Junran/SEP",
+  "upstream_commit": null,
+  "harness_git": "abe57ab",
+  "instance": null,
+  "host": "ip-172-31-35-6",
+  "gpu": null,
+  "started": "2026-06-03T23:58:04",
+  "finished": "2026-06-03T23:58:04",
+  "wallclock_sec": 6.5e-05,
+  "seeds": [
+    0
+  ],
+  "metrics": {
+    "val_acc": [
+      0.7769
+    ],
+    "val_acc_std": [
+      0.0165
+    ],
+    "test_acc": [
+      0.8036
+    ],
+    "test_acc_std": [
+      0.0174
+    ]
+  },
+  "summary": {
+    "val_acc": {
+      "mean": 0.7769,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "val_acc_std": {
+      "mean": 0.0165,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "test_acc": {
+      "mean": 0.8036,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "test_acc_std": {
+      "mean": 0.0174,
+      "ci95": 0.0,
+      "n": 1
+    }
+  },
+  "notes": "modernized PyG2.5",
+  "deviations": ""
+}

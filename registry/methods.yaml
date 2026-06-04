@@ -1,0 +1,168 @@
+# SE Benchmark Suite — Method Registry
+#
+# Single source of truth for which ORIGINAL upstream repository implements each
+# method, plus the pinned commit we reproduce. Reproduction policy: run the
+# authors' published code as-is; wrap only I/O for the shared harness.
+#
+# verified: URL responded to `git ls-remote` on 2026-06-02 (recorded in notes).
+#   to-locate: paper exists, canonical public repo not yet pinned.
+#   none: authors released no code (must be stated as a limitation, not faked).
+#
+# commit: filled in when the repo is cloned to the staging area and pinned.
+# Until a method has a results JSON under suite/results/, it has NO reported number.
+
+community_detection:
+  deDoc:
+    paper: "Li et al., Deciphering the genomic code... (deDoc), Nature Comms 2018"
+    lang: Java
+    repo: https://github.com/yinxc/structural-information-minimisation
+    verified: true
+    commit: null
+    notes: "Founding SE minimization. v1.1 benchmark marked it O(N^3)/infeasible N>50 — verify against original which claims O(n log^2 n)."
+  deDoc2:
+    paper: "Li et al., deDoc2, 2023"
+    lang: Java
+    repo: https://github.com/zengguangjie/deDoc2
+    verified: true
+    commit: null
+  SEP_HCSE:
+    paper: "Wu et al., Structural Entropy Guided Graph Hierarchical Pooling (SEP), ICML 2022; HCSE coding tree (Pan et al. 2021)"
+    lang: Python
+    repo: https://github.com/Wu-Junran/SEP
+    verified: true
+    commit: null
+    notes: "Provides both SEP pooling AND the HCSE coding-tree builder. v1.1 crippled HCSE to a binary tree (target_k=2) — original is depth-unlimited. Rerun original."
+  SuperTAD:
+    paper: "Zhang et al., SuperTAD, Genome Biology 2021"
+    lang: C++
+    repo: https://github.com/deepomicslab/SuperTAD
+    verified: true
+    commit: null
+    notes: "Hi-C contiguity constraint; bioinformatics protocol, not generic graph clustering."
+  SEAT:
+    paper: "Chen et al., PYSEAT, 2022"
+    lang: Python
+    repo: https://github.com/deepomicslab/SEAT
+    verified: true
+    commit: null
+  LSENet:
+    paper: "Sun et al., LSEnet: Lorentz Structural Entropy Neural Network, ICML 2024 (Oral)"
+    lang: Python/PyTorch
+    repo: https://github.com/RiemannGraph/DSE_clustering
+    repo_old: https://github.com/ZhenhHuang/LSEnet  # README-only stub; code MOVED here
+    verified: true
+    commit: 1930d74  # cloned 2026-06-02
+    entry: "main.py (configs/); hyperbolic, GPU. Now part of IsoSEL line."
+    notes: "Differentiable SE in hyperbolic space; GPU. Feature-augmented deep graph clustering."
+  CoDeSEG:
+    paper: "Xian et al., Community Detection as a Structural-Entropy Game (CoDeSEG), WWW 2025"
+    lang: C++
+    repo: https://github.com/SELGroup/CoDeSEG
+    verified: true
+    commit: null
+    notes: "Overlapping communities; needs overlapping NMI/F1 metrics, not disjoint ARI."
+  DeSE:
+    paper: "Zhang et al., DeSE: soft-assignment structural entropy, 2025"
+    lang: Python
+    repo: https://github.com/SELGroup/DeSE
+    verified: true
+    commit: null
+    notes: "FACT-FIX: v1.1 benchmark claims 'no public code is available' — FALSE, repo exists and resolves. Reproduce it."
+  SSE:
+    paper: "Zeng et al., Semi-supervised SE (SSE), 2024"
+    lang: Python
+    repo: https://github.com/SELGroup/SSE
+    verified: true
+    commit: null
+    notes: "Semi-supervised (takes label subset) — needs its own protocol, not unsupervised ARI."
+  SSSE:
+    paper: "Zeng et al., Scalable semi-supervised SE (SSSE), 2024"
+    lang: Python
+    repo: https://github.com/SELGroup/SSSE
+    verified: true
+    commit: null
+
+graph_learning:
+  SEP:
+    paper: "Wu et al., SEP graph pooling, ICML 2022"
+    lang: Python
+    repo: https://github.com/Wu-Junran/SEP
+    verified: true
+    commit: null
+    notes: "Graph-classification (TU datasets) + node tasks. Same repo as SEP_HCSE."
+  SE-GSL:
+    paper: "Zou et al., SE-GSL: graph structure learning, WWW 2023"
+    lang: Python
+    repo: https://github.com/RingBDStack/SE-GSL
+    verified: true
+    commit: 05a9893  # cloned 2026-06-03
+    status: "REPRODUCED (Cora test acc 0.864 ~ paper 0.84); modernized to dgl2.x/torch2.3 (~8 fixes). See cards/graph_learning/SE-GSL.md"
+    notes: "Node classification. Original liang451/SE-GSL URL is DEAD; canonical is RingBDStack/SE-GSL."
+  SEGA:
+    paper: "Wu et al., SEGA: structural-entropy guided graph contrastive learning, ICML 2023"
+    lang: Python
+    repo: https://github.com/Wu-Junran/SEGA
+    verified: true
+    commit: null
+  HiTIN:
+    paper: "Zhu et al., HiTIN: hierarchy-aware tree isomorphism network, ACL 2023"
+    lang: Python
+    repo: https://github.com/Rooooyy/HiTIN
+    verified: true
+    commit: null
+    notes: "Hierarchical text classification."
+  USER:
+    paper: "Wang et al., USER: unsupervised structural entropy robust learning, 2023"
+    lang: Python
+    repo: to-locate
+    verified: false
+    commit: null
+  HiPART:
+    paper: "Hi-PART: hierarchical partition tree, TKDD 2024"
+    lang: Python
+    repo: to-locate
+    verified: false
+    commit: null
+
+rl:
+  SIDM:
+    paper: "Zeng et al., SIDM: structural-information decision making, JMLR 2025 (omnibus: SIRD+SISA+SISL)"
+    lang: Python
+    repo: https://github.com/SELGroup/SIDM
+    repro_ref: https://github.com/SuuTTT/reproduce-SIDM  # user's working reproduction + fixes
+    verified: true
+    commit: null
+    notes: "SIRD=role discovery (SMAC/StarCraftII, HEAVY ~5GB), SISA=state abstraction, SISL=skill (MuJoCo). See cards/rl/SIDM-SIRD.md."
+  SI2E:
+    paper: "Zeng et al., SI2E: value-conditional SE intrinsic motivation, 2024"
+    lang: Python
+    repo: https://github.com/SELGroup/SI2E
+    repro_ref: https://github.com/SuuTTT/learn-si2e  # user's working reproduction (MiniGrid, LIGHT) + fixes
+    verified: true
+    commit: null
+    notes: "PHASE-3 ENTRY POINT (light). MiniGrid A2C/PPO ~97min/run. SI2E vs VCSE/SE/Baseline. See cards/rl/SI2E.md."
+  COLLAB:
+    paper: "Su et al., Emergence of collaboration (COLLAB-MARL), SDM 2025"
+    lang: Python
+    repo: https://github.com/SELGroup/COLLAB
+    verified: true
+    commit: null
+    notes: "Authored by survey first author (Dingli Su) — should be most reproducible."
+  SISA:
+    paper: "Zeng et al., hierarchical state abstraction (SISA), 2023"
+    lang: Python
+    repo: to-locate
+    verified: false
+    commit: null
+  SIRD:
+    paper: "Zeng et al., role discovery via SE (SIRD), 2023"
+    lang: Python
+    repo: to-locate
+    verified: false
+    commit: null
+
+baselines:
+  # Non-SE reference methods for fair comparison (R2: 'comparison with other graph metrics').
+  community: [louvain, leiden, infomap, spectral_normalized_cut, DMoN, MinCutPool, DiffPool]
+  graph_learning: [GCN, GIN, GAT, TopK_pool, SAGPool, ASAP, GraphCL, no_pool_baseline]
+  rl: [vanilla_PPO, vanilla_QMIX, ICM_intrinsic, RND_intrinsic, option_critic]

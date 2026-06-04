@@ -1,0 +1,55 @@
+{
+  "method": "SEP",
+  "family": "graph_learning",
+  "dataset": "MUTAG",
+  "upstream_repo": "https://github.com/Wu-Junran/SEP",
+  "upstream_commit": null,
+  "harness_git": "abe57ab",
+  "instance": null,
+  "host": "ip-172-31-35-6",
+  "gpu": null,
+  "started": "2026-06-03T23:58:04",
+  "finished": "2026-06-03T23:58:04",
+  "wallclock_sec": 6.5e-05,
+  "seeds": [
+    0
+  ],
+  "metrics": {
+    "val_acc": [
+      0.85
+    ],
+    "val_acc_std": [
+      0.0611
+    ],
+    "test_acc": [
+      0.9278
+    ],
+    "test_acc_std": [
+      0.066
+    ]
+  },
+  "summary": {
+    "val_acc": {
+      "mean": 0.85,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "val_acc_std": {
+      "mean": 0.0611,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "test_acc": {
+      "mean": 0.9278,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "test_acc_std": {
+      "mean": 0.066,
+      "ci95": 0.0,
+      "n": 1
+    }
+  },
+  "notes": "modernized PyG2.5",
+  "deviations": ""
+}
