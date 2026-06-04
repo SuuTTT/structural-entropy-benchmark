@@ -1,0 +1,47 @@
+{
+  "method": "SSE",
+  "family": "semi_supervised",
+  "dataset": "wine",
+  "upstream_repo": "https://github.com/SELGroup/SSE",
+  "upstream_commit": null,
+  "harness_git": "abe57ab",
+  "instance": null,
+  "host": "ip-172-31-35-6",
+  "gpu": null,
+  "started": "2026-06-04T20:10:33",
+  "finished": "2026-06-04T20:10:33",
+  "wallclock_sec": 2.7e-05,
+  "seeds": [
+    0
+  ],
+  "metrics": {
+    "acc": [
+      0.9295
+    ],
+    "nmi": [
+      0.8637
+    ],
+    "ari": [
+      0.8464
+    ]
+  },
+  "summary": {
+    "acc": {
+      "mean": 0.9295,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "nmi": {
+      "mean": 0.8637,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "ari": {
+      "mean": 0.8464,
+      "ci95": 0.0,
+      "n": 1
+    }
+  },
+  "notes": "semi-sup SE clustering, constraint_ratio 0.2, 10 repeats; ACC/NMI/ARI",
+  "deviations": ""
+}

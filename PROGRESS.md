@@ -30,6 +30,9 @@ produced (this project has a fabrication history; see `ROADMAP.md`).
 | — | Louvain/Leiden/Infomap/Spectral | CD baselines | ✅ | ✅ | full LFR sweep + SBM + attributed |
 | — | DiffPool/MinCut/TopK/SAGPool | GL baselines | ⏳ | pending | SEP-paper baselines to add |
 
+| 12 | **SSE** (2024) | NEW: semi-sup clustering | ✅ orig | ✅ | UCI: wine .93 / breast-cancer .97 / australian .74 / heart .75 (ACC, 20% constraints) |
+| 13 | **UnDBot** (TOIS 2024) | NEW: social-bot | ✅ orig | ⚠️ partial | botwiki AUC .883 (acc/F1 modest; large sets OOM on laptop) |
+
 Legend: ✅ done · ⏳ in progress/pending · ❌ genuine failure (a finding)
 
 ---

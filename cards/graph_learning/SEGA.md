@@ -27,3 +27,14 @@ PROTEINS / IMDB-BINARY / NCI1 running on the 3070 (`sega_<DS>.log`).
 ## Results
 `sega_<DS>.log` → parse `^dnodes 20` line (accG accGstd accT accTstd accGT accGTstd).
 JSON pending full queue.
+
+
+## Final results (modernized, 3070, 2026-06-04)
+| dataset | accG | accGT | paper |
+|---|---|---|---|
+| MUTAG | ~85.7 | ~87.3 | ~88 |
+| PROTEINS | 75.1 | 74.6 | ~76 |
+| IMDB-BINARY | 70.9 | 72.2 | ~73.6 |
+| NCI1 | — | — | (timed out at 5400s; large dataset) |
+
+Reproduces within range on MUTAG/PROTEINS/IMDB-B. JSONs in results/graph_learning/.

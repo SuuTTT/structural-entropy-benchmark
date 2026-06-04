@@ -1,0 +1,63 @@
+{
+  "method": "UnDBot",
+  "family": "social_bot",
+  "dataset": "botwiki-2019",
+  "upstream_repo": "https://github.com/SELGroup/UnDBot",
+  "upstream_commit": null,
+  "harness_git": "abe57ab",
+  "instance": null,
+  "host": "ip-172-31-35-6",
+  "gpu": null,
+  "started": "2026-06-04T20:10:33",
+  "finished": "2026-06-04T20:10:33",
+  "wallclock_sec": 2e-05,
+  "seeds": [
+    0
+  ],
+  "metrics": {
+    "acc": [
+      0.4121
+    ],
+    "precision": [
+      0.3492
+    ],
+    "recall": [
+      0.967
+    ],
+    "f1": [
+      0.5131
+    ],
+    "auc": [
+      0.883
+    ]
+  },
+  "summary": {
+    "acc": {
+      "mean": 0.4121,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "precision": {
+      "mean": 0.3492,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "recall": {
+      "mean": 0.967,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "f1": {
+      "mean": 0.5131,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "auc": {
+      "mean": 0.883,
+      "ci95": 0.0,
+      "n": 1
+    }
+  },
+  "notes": "unsup social-bot detection via heterogeneous SE; 125 comms",
+  "deviations": ""
+}

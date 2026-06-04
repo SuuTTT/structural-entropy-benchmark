@@ -1,0 +1,47 @@
+{
+  "method": "SEGA",
+  "family": "graph_learning",
+  "dataset": "IMDB-BINARY",
+  "upstream_repo": "https://github.com/Wu-Junran/SEGA",
+  "upstream_commit": "0c453b2",
+  "harness_git": "abe57ab",
+  "instance": null,
+  "host": "ip-172-31-35-6",
+  "gpu": null,
+  "started": "2026-06-04T20:01:47",
+  "finished": "2026-06-04T20:01:47",
+  "wallclock_sec": 2e-05,
+  "seeds": [
+    0
+  ],
+  "metrics": {
+    "accG": [
+      0.7094
+    ],
+    "accT": [
+      0.7212000000000001
+    ],
+    "accGT": [
+      0.722
+    ]
+  },
+  "summary": {
+    "accG": {
+      "mean": 0.7094,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "accT": {
+      "mean": 0.7212000000000001,
+      "ci95": 0.0,
+      "n": 1
+    },
+    "accGT": {
+      "mean": 0.722,
+      "ci95": 0.0,
+      "n": 1
+    }
+  },
+  "notes": "ICML23 contrastive; modernized PyG2.5; unsup SVM acc %",
+  "deviations": ""
+}
