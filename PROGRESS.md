@@ -20,6 +20,7 @@ produced (this project has a fabrication history; see `ROADMAP.md`).
 | 3 | **CoDeSEG** (WWW 2025) | CD / SE-game | ✅ orig C++ | ✅ runs | over-segments LFR (ARI .66@μ.3 vs .96 baseline) |
 | 4 | **LSENet** (ICML 2024) | CD / hyperbolic SE | ✅ orig PyTorch | ✅ Cora,Photo / ❌ Citeseer | Cora NMI 44±3; Photo 60.5±3; Citeseer fails 3.3±3.6 |
 | 5 | **SEP** (ICML 2022) | Graph pooling | ✅ orig (modernized) | ✅ **7/7 datasets** | val: PROTEINS .761 / DD .771 / NCI1 .780 / MUTAG .850 / IMDB-B .735 / IMDB-M .515 / COLLAB .803 — all ≈ paper. JSONs in results/graph_learning/ |
+| 5b | **SEGA** (ICML 2023) | Graph contrastive | ✅ orig (modernized, 5 patches) | ✅ MUTAG | MUTAG ~85-87% (paper ~88); PROTEINS/IMDB-B/NCI1 running. Modern-PyG patches mirror SEP |
 | 6 | **SI2E** (2024) | RL exploration | ✅ orig (modernized, 5 patches) | ⚠️ difficulty-graded | **4 MiniGrid envs**: KeyCorridorS3R1(easy) .91/.90/.91 reliably solves; DoorKey-8x8(med) .00/.94/.25/.07/.94 bimodal; RedBlueDoors .89/.06/.76 bimodal; KeyCorridorS3R2(hard) .00/.02/.00 fails. SE helps on easy/medium, unstable→fails on hard — sharper than paper's uniform 100% |
 | 7 | **SE-GSL** (WWW 2023) | Graph structure learning | ✅ orig (modernized, ~8 fixes) | ✅ Cora | Cora test acc **0.869±0.015** (paper ~0.84); citeseer running |
 | 8 | **SIDM/SIRD** (JMLR 2025) | RL decision | ⏳ recipe banked | pending | heavy (StarCraftII); stretch goal |

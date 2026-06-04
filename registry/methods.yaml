@@ -103,7 +103,8 @@ graph_learning:
     lang: Python
     repo: https://github.com/Wu-Junran/SEGA
     verified: true
-    commit: null
+    commit: 0c453b2
+    status: "REPRODUCED MUTAG ~85-87% (paper ~88); modernized PyG2.5 (5 patches). cards/graph_learning/SEGA.md"
   HiTIN:
     paper: "Zhu et al., HiTIN: hierarchy-aware tree isomorphism network, ACL 2023"
     lang: Python

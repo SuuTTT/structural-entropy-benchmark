@@ -8,15 +8,15 @@
   "instance": null,
   "host": "ip-172-31-35-6",
   "gpu": null,
-  "started": "2026-06-04T09:58:50",
-  "finished": "2026-06-04T09:58:50",
-  "wallclock_sec": 0.000208,
+  "started": "2026-06-04T12:31:33",
+  "finished": "2026-06-04T12:31:33",
+  "wallclock_sec": 0.000275,
   "seeds": [
     0
   ],
   "metrics": {
     "success_rate": [
-      0.89
+      0.82
     ],
     "peak_episode_reward": [
       0.99
@@ -24,7 +24,7 @@
   },
   "summary": {
     "success_rate": {
-      "mean": 0.89,
+      "mean": 0.82,
       "ci95": 0.0,
       "n": 1
     },
