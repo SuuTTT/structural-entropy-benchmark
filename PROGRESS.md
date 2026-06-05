@@ -28,7 +28,7 @@ produced (this project has a fabrication history; see `ROADMAP.md`).
 | 10 | **SuperTAD** (Genome Biol 2021) | NEW: bioinformatics/TAD | ✅ orig C++ | ✅ reproduced | 20 hierarchical TADs on real Hi-C (GM12878/IMR90 chr19) — SE's original real-world win |
 | 11 | **SeSE** (LLM uncertainty) | NEW: LLM | ⏭️ skipped | gated | needs ≥24GB GPU (4090) + OpenAI API + gated LLaMa — out of our 12–16GB budget |
 | — | Louvain/Leiden/Infomap/Spectral | CD baselines | ✅ | ✅ | full LFR sweep + SBM + attributed |
-| — | DiffPool/MinCut/TopK/SAGPool | GL baselines | ⏳ | pending | SEP-paper baselines to add |
+| — | DiffPool/MinCutPool | GL baselines | ✅ done | 2026-06-05 | PyG dense ops, 4 TU datasets ×3 seeds (run_gl_baselines.py); SEP > both on PROTEINS/NCI1, ~tie MUTAG/IMDB-B |
 
 | 12 | **SSE** (2024) | NEW: semi-sup clustering | ✅ orig | ✅ | UCI: wine .93 / breast-cancer .97 / australian .74 / heart .75 (ACC, 20% constraints) |
 | 13 | **UnDBot** (TOIS 2024) | NEW: social-bot | ✅ orig | ⚠️ partial | botwiki AUC .883 (acc/F1 modest; large sets OOM on laptop) |
@@ -51,7 +51,7 @@ Legend: ✅ done · ⏳ in progress/pending · ❌ genuine failure (a finding)
 ### Phase 2 — Graph learning (RUNNING)
 - **SEP graph classification** on TU datasets (PROTEINS ✅, NCI1/DD running),
   10-fold CV, modernized to torch 2.5/PyG 2.5 (2 minimal patches, `cards/graph_learning/SEP.md`).
-- **Pending:** SE-GSL / SEGA (node classification); DiffPool/MinCut baselines.
+- DiffPool/MinCutPool baselines DONE (2026-06-05). User-skipped: SIDM, COLLAB, SES/SEGO/FairGSE (no code), SeSE (GPU-gated).
 
 ### Phase 3 — Reinforcement learning (SETUP)
 - **SI2E** on MiniGrid (DoorKey/KeyCorridor) — code cloned; modernizing gym API.
@@ -108,7 +108,7 @@ manuscript** around the evidence (Phase 1+2+RL+hierarchy+bio all have JSON-backe
 | Phase 2 — SEP (graph classification, 6 datasets) | ✅ DONE (JSONs) | — |
 | Phase 2 — SE-GSL (node classification) | 🔄 cora done; citeseer running | **~30 min** |
 | Phase 3 — SI2E (RL) | ⚠️ seed-1 non-repro; seed-2 running | **~90 min** (then verdict) |
-| Phase 2 breadth — add DiffPool/MinCut/TopK baselines for SEP | ⏳ pending | ~0.5 day |
+| Phase 2 breadth — DiffPool/MinCutPool baselines for SEP | ✅ done 2026-06-05 | — |
 | Phase 3 — resolve SI2E (more seeds / env diff) OR report as null | ⏳ | ~0.5–1 day |
 | **Empirical core complete** (all 3 families, honest) | — | **~1 day** |
 | Manuscript draft around the evidence | ⏳ | +2–3 days |
@@ -126,3 +126,10 @@ caveat — NOT as "SE doesn't help RL".
 2. SI2E verdict (seed sweep) → finalize RL row.
 3. SEP vs DiffPool/MinCut/TopK baseline numbers (paper-reported + reproduce subset).
 4. Draft manuscript evidence tables (Phase 1 + 2 ready now).
+
+
+## selib (2026-06-05)
+Standardized SE library github.com/SuuTTT/selib (page: suuttt.github.io/selib):
+se_louvain (lowest 2D-SE everywhere, free-k, vs CoDeSEG/deDoc original code), se_hier (lowest H^T
+everywhere incl. vs original BBM/HCSE + Paris; scales to n=1000), se_gnn (differentiable soft 2D-SE
++ GCN + Sinkhorn head; Cora NMI .487 ≈ LSENet). Manuscript tables auto-generated from JSONs.

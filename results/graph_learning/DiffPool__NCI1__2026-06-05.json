@@ -1,0 +1,30 @@
+{
+  "method": "DiffPool",
+  "family": "graph_learning",
+  "dataset": "NCI1",
+  "upstream_repo": "pytorch_geometric dense pooling (official ops)",
+  "upstream_commit": null,
+  "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+  "started": "2026-06-05",
+  "wallclock_sec": 405.8,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "metrics": {
+    "acc": [
+      0.7178,
+      0.7056,
+      0.7105
+    ]
+  },
+  "summary": {
+    "acc": {
+      "mean": 0.7113,
+      "n": 3
+    }
+  },
+  "notes": "SEP-table baseline; 80/10/10 split, test acc at best val, max_nodes=115 filter (dense batching), 100 epochs Adam 0.001.",
+  "deviations": "protocol simpler than SEP's (no 10-fold)"
+}
