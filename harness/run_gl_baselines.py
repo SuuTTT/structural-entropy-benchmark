@@ -11,7 +11,8 @@ import torch.nn.functional as F
 from torch_geometric.datasets import TUDataset
 from torch_geometric.loader import DenseDataLoader
 import torch_geometric.transforms as T
-from torch_geometric.nn import DenseGCNConv, dense_diff_pool, dense_mincut_pool
+from torch_geometric.nn import (DenseGCNConv, dense_diff_pool, dense_mincut_pool,
+                                DMoNPooling)
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
@@ -31,17 +32,23 @@ class DensePoolNet(torch.nn.Module):
         k = max(1, int(max_nodes * ratio))
         self.emb1 = DenseGCNConv(in_dim, hidden)
         self.pool_mlp = torch.nn.Linear(hidden, k)      # assignment logits
+        if mode == "dmon":
+            self.dmon = DMoNPooling(hidden, k)
         self.emb2 = DenseGCNConv(hidden, hidden)
         self.lin1 = torch.nn.Linear(hidden, hidden)
         self.lin2 = torch.nn.Linear(hidden, n_classes)
 
     def forward(self, x, adj, mask):
         h = F.relu(self.emb1(x, adj, mask))
-        s = self.pool_mlp(h)
-        if self.mode == "diffpool":
+        if self.mode == "dmon":
+            _, h, adj, sp, o, c = self.dmon(h, adj, mask)
+            aux = sp + o + c
+        elif self.mode == "diffpool":
+            s = self.pool_mlp(h)
             h, adj, l1, l2 = dense_diff_pool(h, adj, s, mask)
             aux = l1 + l2
         else:
+            s = self.pool_mlp(h)
             h, adj, l1, l2 = dense_mincut_pool(h, adj, s, mask)
             aux = l1 + l2
         h = F.relu(self.emb2(h, adj))
@@ -105,7 +112,11 @@ def run_one(name, max_nodes, mode, seed):
 def main():
     os.makedirs(OUT, exist_ok=True)
     date = datetime.date.today().isoformat()
-    for mode, mname in (("diffpool", "DiffPool"), ("mincut", "MinCutPool")):
+    modes = (("diffpool", "DiffPool"), ("mincut", "MinCutPool"), ("dmon", "DMoN"))
+    if os.environ.get("GL_MODES"):
+        want = set(os.environ["GL_MODES"].split(","))
+        modes = tuple(m for m in modes if m[0] in want)
+    for mode, mname in modes:
         for name, max_nodes in DATASETS:
             t0 = time.time()
             accs = []

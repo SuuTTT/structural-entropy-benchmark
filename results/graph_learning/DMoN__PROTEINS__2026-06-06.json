@@ -1,0 +1,30 @@
+{
+  "method": "DMoN",
+  "family": "graph_learning",
+  "dataset": "PROTEINS",
+  "upstream_repo": "pytorch_geometric dense pooling (official ops)",
+  "upstream_commit": null,
+  "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+  "started": "2026-06-06",
+  "wallclock_sec": 135.5,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "metrics": {
+    "acc": [
+      0.7064,
+      0.7706,
+      0.7339
+    ]
+  },
+  "summary": {
+    "acc": {
+      "mean": 0.737,
+      "n": 3
+    }
+  },
+  "notes": "SEP-table baseline; 80/10/10 split, test acc at best val, max_nodes=150 filter (dense batching), 100 epochs Adam 0.001.",
+  "deviations": "protocol simpler than SEP's (no 10-fold)"
+}
