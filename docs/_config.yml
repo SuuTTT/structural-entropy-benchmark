@@ -1,0 +1,8 @@
+title: Structural Entropy Benchmark
+description: "A reproducible benchmark of structural-entropy methods — original code, shared harness, honest results, and survey companion notes."
+theme: minima
+baseurl: "/structural-entropy-benchmark"
+url: "https://suuttt.github.io"
+show_excerpts: true
+kramdown:
+  math_engine: null
