@@ -16,20 +16,24 @@ import matplotlib
 matplotlib.use("Agg")
 matplotlib.rcParams.update({
     "font.family": "serif",
-    "font.serif": ["Latin Modern Roman", "CMU Serif", "DejaVu Serif"],
-    "mathtext.fontset": "cm",
+    # Times-compatible serif to match the TGINA (Times) body font.
+    "font.serif": ["Nimbus Roman", "Times New Roman", "Times",
+                   "STIXGeneral", "DejaVu Serif"],
+    "mathtext.fontset": "stix",
     "axes.unicode_minus": False,
 })
 import matplotlib.pyplot as plt
 
-# Display label, line style, marker, color, is-SE-method
+# Display label, line style, marker, color. Distinct markers AND line styles so
+# the curves stay separable in black-and-white / for colour-blind readers
+# (SE methods use open markers + dashed-family styles; baselines solid).
 STYLE = {
-    "Louvain":  dict(label="Louvain",      ls="-",  marker="o", color="#1f77b4"),
-    "Leiden":   dict(label="Leiden",       ls="-",  marker="s", color="#ff7f0e"),
-    "Infomap":  dict(label="Infomap",      ls="-",  marker="^", color="#2ca02c"),
-    "Spectral": dict(label="Spectral",     ls="-",  marker="D", color="#d62728"),
-    "CoDeSEG":  dict(label="CoDeSEG (SE)",  ls="--", marker="x", color="#9467bd"),
-    "deDoc":    dict(label="deDoc (SE)",    ls="--", marker="+", color="#8c564b"),
+    "Louvain":  dict(label="Louvain",      ls="-",   marker="o", color="#1f77b4"),
+    "Leiden":   dict(label="Leiden",       ls="-",   marker="s", color="#ff7f0e"),
+    "Infomap":  dict(label="Infomap",      ls=":",   marker="^", color="#2ca02c"),
+    "Spectral": dict(label="Spectral",     ls="-.",  marker="D", color="#d62728"),
+    "CoDeSEG":  dict(label="CoDeSEG (SE)",  ls="--",  marker="x", color="#9467bd"),
+    "deDoc":    dict(label="deDoc (SE)",    ls=(0,(3,1,1,1)), marker="P", color="#8c564b"),
 }
 ORDER = ["Louvain", "Leiden", "Infomap", "Spectral", "CoDeSEG", "deDoc"]
 
