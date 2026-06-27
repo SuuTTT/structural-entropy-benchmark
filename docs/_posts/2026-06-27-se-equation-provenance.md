@@ -5,6 +5,14 @@ date: 2026-06-27
 description: "We checked every structural-entropy equation in our survey against its original source — the SE book for the core definitions, and the cited paper for each variant. Two real errors found and fixed (the encoding-tree summation domain, and a hard-vs-soft constraint), plus a handful of benign table-level abstractions documented. This post shows, side by side, the survey form, the source form, and the verdict for all eight equations."
 ---
 
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']], processEscapes: true },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 > Surveys are where definitions go to drift. A formula gets transcribed from a
 > paper, simplified for a table, recombined across variants — and small index or
 > constraint changes creep in. So we audited **every structural-entropy (SE)
