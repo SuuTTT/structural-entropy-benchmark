@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Results Ledger
+permalink: /ledger/
 description: "A durable registry of every structural-entropy experiment, grid-cell, method, and lever we have run across the SE research program — with its status, honest result, and source artifact. Single source of truth for what we already know, so we never redo an experiment."
 ---
 
