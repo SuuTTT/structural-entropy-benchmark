@@ -1,0 +1,2 @@
+
+QwenInstruct-nq_open NLI-SE: N=100  TSV=0.5842  NLI-SE=0.9235  corr=-0.201  |  logregCV TSV=0.1429  TSV+NLI-SE=0.8112  delta=+0.6684

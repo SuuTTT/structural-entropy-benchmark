@@ -1,0 +1,5 @@
+lam=5 wd=0.0 | FINAL-EPOCH AUROC: 0.2245 | exemplarAUROC= 1.0
+lam=5 wd=0.1 | FINAL-EPOCH AUROC: 0.2245 | exemplarAUROC= 1.0
+lam=2 wd=0.0 | FINAL-EPOCH AUROC: 0.25 | exemplarAUROC= 1.0
+lam=1 wd=0.0 | FINAL-EPOCH AUROC: 0.3648 | exemplarAUROC= 1.0
+lam=1 wd=0.1 | FINAL-EPOCH AUROC: 0.3724 | exemplarAUROC= 1.0

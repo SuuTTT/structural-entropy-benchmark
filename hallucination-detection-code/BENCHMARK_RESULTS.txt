@@ -1,0 +1,4 @@
+qwen2.5-7B/triviaqa L22 C0.01: probe(L22)=0.8217 | SE=0.1855 | naive_fuse=0.8377 | adapt_fuse=0.8389
+qwen2.5-7B-instruct/triviaqa L18 C0.01: probe(L18)=0.6691 | SE=0.3204 | naive_fuse=0.6691 | adapt_fuse=0.6699
+qwen2.5-7B/nq_open L22 C1.0: probe(L22)=0.5620 | SE=0.2409 | naive_fuse=0.6048 | adapt_fuse=0.6070
+qwen2.5-7B-instruct/nq_open L9 C0.01: probe(L9)=0.5015 | SE=0.2810 | naive_fuse=0.5305 | adapt_fuse=0.5296

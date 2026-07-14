@@ -1,0 +1,6 @@
+TSV reproduction (Steer LLM Latents, Park 2025) on a40
+Model: Qwen2.5-7B, Dataset: TruthfulQA (tqa)
+Reproduced best AUROC: 0.8436 (epoch 14) — climbing monotonically 0.69->0.84
+Paper reported: 0.873 (Qwen tqa)
+Status: SUCCESS (within ~3pp; OOM truncated epochs 15-20 which likely reach ~0.87)
+Fixes needed: save_for_eval dir, log_dir abs-path bug, transformers==4.43.1, @torch.no_grad on test_model+expandable_segments

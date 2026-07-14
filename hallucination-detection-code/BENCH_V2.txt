@@ -1,0 +1,6 @@
+qwen2.5-7B/tqa: divprobe=0.8401 SE=0.6566 naive_fuse=0.8311 gate_agree=0.7945 gate_semag=0.8059
+qwen2.5-7B/triviaqa: divprobe=0.8097 SE=0.8145 naive_fuse=0.7965 gate_agree=0.8297 gate_semag=0.8373
+qwen2.5-7B/nq_open: divprobe=0.5849 SE=0.7591 naive_fuse=0.5628 gate_agree=0.6986 gate_semag=0.6974
+qwen2.5-7B-instruct/tqa: divprobe=0.5008 SE=0.5025 naive_fuse=0.5125 gate_agree=0.4342 gate_semag=0.4508
+qwen2.5-7B-instruct/triviaqa: divprobe=0.6558 SE=0.6796 naive_fuse=0.6582 gate_agree=0.6905 gate_semag=0.6901
+qwen2.5-7B-instruct/nq_open: divprobe=0.5313 SE=0.7190 naive_fuse=0.5351 gate_agree=0.6360 gate_semag=0.6503

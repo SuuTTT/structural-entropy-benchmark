@@ -1,0 +1,2 @@
+
+QwenInstruct-TriviaQA NLI-SE: N=100  TSV=0.8564  NLI-SE=0.6927  corr=0.236  |  logregCV TSV=0.8452  TSV+NLI-SE=0.8445  delta=-0.0007

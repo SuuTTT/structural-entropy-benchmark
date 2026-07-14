@@ -1,0 +1,11 @@
+TruthfulQA Qwen2.5-7B  N=205
+TSV-alone AUROC=0.8436
+answerSE-alone AUROC=0.5449
+FUSED(z-sum) AUROC=0.7560
+corr(TSV,SE)=0.329
+verdict=no gain (TSV latent already captures it)
+
+LEARNED fusion (logreg 5fold CV): TSV-only=0.8218 TSV+SE=0.8340 delta=+0.0122
+SE-alone(string-cluster)=0.5449 (weak; NLI-cluster would be fairer)
+
+NLI-based SE: N=205  TSV=0.8436  NLI-SE=0.5565  corr=0.329  |  logregCV TSV=0.8218  TSV+NLI-SE=0.8303  delta=+0.0085

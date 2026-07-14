@@ -1,0 +1,2 @@
+GOODCELL(triviaqa) lam=5 wd=0.0 | FINAL-EPOCH AUROC: 0.8423
+GOODCELL(triviaqa) lam=1 wd=0.1 | FINAL-EPOCH AUROC: 0.8274
