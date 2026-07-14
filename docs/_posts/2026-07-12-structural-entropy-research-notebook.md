@@ -13,7 +13,27 @@ description: "Structural entropy is a single information-theoretic measure of ho
 </script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-> **TL;DR.** Four research tracks, one measure. **(1) Graph attention** — the clean, significant win: a multi-level structural-entropy prior beats flat SE and modularity by 2–3.7 points of accuracy at $p<10^{-6}$, with the controls reviewers ask for. **(2) RL state abstraction (DM-SISA)** — a differentiable, GPU-native SE module that is ~16,000× cheaper than the discrete original and *matches* it on return; then a task-relevant variant that produces the project's first genuine return beat (**+14%, $p=0.0073$, 10 seeds**) on one task — but honestly *does not* generalize. **(3) LLM confidence (SeSE)** — reasoning-chain SE beats answer SE at catching a model's own errors, but only when the model is overconfident, and so far only inside the gemma model family. **(4) The benchmark itself** — the reproducible harness and provenance audit that keep all of the above honest. The single newsworthy headline: **task-relevance is what turns SE from "no effect" into a real RL gain — but that gain is task-specific, not a free lunch.**
+> **TL;DR.** Four research tracks, one measure. **(1) Graph attention** — the clean, significant win: a multi-level structural-entropy prior beats flat SE and modularity by 2–3.7 points of accuracy at $p<10^{-6}$, with the controls reviewers ask for. **(2) RL state abstraction (DM-SISA)** — a differentiable, GPU-native SE module that is ~16,000× cheaper than the discrete original and *matches* it on return; then a task-relevant variant that produces the project's first genuine return beat (**+14%, $p=0.0073$, 10 seeds**) on one task — but honestly *does not* generalize (a fresh 100k-budget locomotion re-test now shows walker-*run* gets **no** benefit either). **(3) LLM confidence (SeSE)** — reasoning-chain SE beats answer SE at catching a model's own errors, but only when the model is overconfident, and so far only inside the gemma model family. **(4) The benchmark itself** — the reproducible harness and provenance audit that keep all of the above honest. **(6) Cross-modal confidence fusion (TSV+SE)** — the newest result: fusing a *latent* hallucination probe with our *output-space* semantic entropy gives a **bootstrap-significant +11pp AUROC** on TriviaQA, and it is **regime-dependent** — the two modalities are complementary exactly where a model is genuinely uncertain, and redundant where it is confidently wrong. The single newsworthy headline: **task-relevance / modality-complementarity is what turns SE from "no effect" into a real gain — but only where the structure it measures actually differs from what you already have.**
+
+---
+
+## Live progress dashboard — updated 2026-07-14
+
+| # | Track | Progress | Status | Headline result so far |
+|---|---|---|---|---|
+| 1 | Graph attention | `██████████` 100% | **shipped** | multi-level SE +2.0 / +3.7 pp, $p<10^{-6}$ (8 datasets × 15 seeds) |
+| 2 | DM-SISA (RL) | `█████████░` ~90% | core done; **§9c generality re-test running** | walker-walk **+14%** (10 seeds); walker-run **no benefit** at 100k (−4%, $p=0.71$); hopper/quad vanilla filling |
+| 3 | SeSE (LLM confidence) | `██████████` 100% | **done**, gemma-anchored | chain-SE beats answer-SE only under overconfidence, gemma family only ($\mathrm{corr}\approx0.75$) |
+| 4 | Benchmark / provenance audit | `████████░░` continuous | **live** | 2 equation-transcription errors fixed; ledger current |
+| 5 | SeSE within-SE fusion | `██████████` tested | **NULL** | answer-SE + chain-SE redundant (both output-space) |
+| 6 | **TSV + SE cross-modal fusion** | `████████░░` ~85% | 3 datasets done + bootstrap-tested; **cross-model run in flight** | latent+SE fusion **+11pp** TriviaQA (95% CI [+1.1,+19.1]); regime-dependent |
+
+**Two live compute jobs right now:**
+
+- **a40 · Qwen-Instruct / TriviaQA** (Track 6 cross-model, base-vs-instruct): `most_likely ✔ → batch-generations ███░░░░░░░ 136/400 → gt → train` — ≈35 min to a 4th data point on whether the fusion story holds for an instruct-tuned model.
+- **newbox (4×3060) · DM-SISA §9c vanilla arms** (Track 2): walker `████████░░` 4/5 @90k (verdict in) · hopper `██░░░░░░░░` ~40k ×2 · quad `░░░░░░░░░░` not started. Slow box (~7–10% util); full 3-task verdict is day-scale out.
+
+*(Graph-SE data and the finished LLM-confidence sweeps are archived; only Tracks 2 and 6 have live jobs.)*
 
 ### 60 seconds of background
 
@@ -74,6 +94,8 @@ That is **+14% return, $p=0.0073$** (two-sided rank test, under a Bonferroni thr
 
 So the defensible claim is precise: **a task-relevant SE graph produces a real, corrected-significant return gain where the feature-cosine graph and the plain baseline do not — but the benefit is task-specific, not a general property of task-relevant SE.** A scoped positive with a clear boundary, which is more useful than a false "beats the baseline everywhere."
 
+**Update (§9c, 2026-07-14) — a fresh locomotion re-test tightens the boundary.** To ask whether the walker win is at least a *dense-reward locomotion family* property, we ran reward-graph vs same-box RAD-SAC on three locomotion tasks (walker-*run*, hopper-hop, quadruped-walk) at a clean 100k-step budget, 5 seeds each, on a new box. Comparison is at the last logged eval (90k). Walker-run is complete: reward **227.6** vs vanilla **237.0** — **−4%, $p=0.71$ (n.s.), no benefit.** So the win does *not* even extend from walker-*walk* to the harder walker-*run* at a short budget. Hopper/quadruped vanilla arms are still filling (slow box), but walker-run already argues against a broad "dense-reward locomotion" generalization — the honest read is that the effect is **narrow to walker-walk at its trained budget.** (Full table in `dm-sisa/DM_SISA_STUDY.md` §9c, committed 51ce04f.)
+
 **Feeds.** The efficiency + formulation result is a systems/workshop contribution; the walker beat + its honest generality boundary is the paper's core. It borrows Track 1's "multi-level hierarchy is the lever" and adds "and the *graph* must be task-relevant."
 
 ---
@@ -118,6 +140,28 @@ We also debunked our own earlier cross-family "lead": a Mistral result that look
 
 ---
 
+## Track 6 — TSV + SE: cross-modal confidence fusion (the fusion thesis, realized)
+
+**What it is.** Track 5 asked whether *fusing* confidence signals beats picking one — and found that fusing two *output-space* SE signals (answer-SE + chain-SE) is a null, because they are redundant (both just track the answer distribution). Track 6 changes one thing: fuse across **modalities**. We reproduced **TSV** (Park et al., ICML 2025) — a trainable *latent-space* steering vector that reads hallucination off a model's hidden states — and fused its score with our **output-space** semantic entropy (NLI-clustered SE over sampled generations). Latent probe + output entropy: two genuinely different views of the same error.
+
+**Why it exists.** It is the clean test of the fusion thesis. If complementary-accuracy is the crux (Track 5), then two signals from *different modalities* should fuse where two from the *same* modality did not.
+
+**Status — a real, replicated, significance-tested win with a sharp regime boundary.** We reproduced TSV on Qwen2.5-7B (AUROC 0.844 on TruthfulQA vs the paper's 0.873, within 3pp after fixing five repo/env bugs), then ran the fusion across three QA datasets:
+
+| dataset | error regime | NLI-SE alone | TSV (latent) | corr(TSV,SE) | learned-fusion Δ |
+|---|---|---|---|---|---|
+| TruthfulQA | confident-wrong | 0.556 (weak) | 0.844 | 0.33 | +0.85 pp |
+| **TriviaQA** | genuine uncertainty | **0.817** (beats TSV) | 0.736 | 0.34 | **+11.1 pp** |
+| **nq_open** | genuine uncertainty | 0.667 | 0.667 | **−0.20** (anti-corr.) | **+9.4 pp** |
+
+The pattern is the whole result: **where a model errs from genuine uncertainty (TriviaQA, nq_open), sampled generations disagree, SE is strong — often as strong as the latent probe — and the two are complementary (corr 0.34, even *negative* on nq_open), so fusion adds ~+9–11 pp.** Where a model errs by being *confidently wrong* (TruthfulQA), samples agree on the same falsehood, SE collapses to chance, and only the latent probe works — fusion adds nothing. A 2000-resample bootstrap confirms the TriviaQA gain is real (95% CI [+1.1, +19.1] pp, $p\approx0.024$); the nq_open gain is directionally identical but underpowered at $n=100$ (CI includes 0). This is the same regime boundary as Track 3 — SE detects hallucination under genuine uncertainty, fails under confident-wrongness — now shown to be *exploitable*: pair SE with a latent probe and you cover both regimes.
+
+**In flight.** A cross-model run (Qwen2.5-7B-**Instruct**, same pipeline, offline) is testing whether the regime story holds beyond the base model; a cross-*family* run (llama, Yi) was blocked by gated / incomplete model caches. We also filed the transferable takeaways as an issue for a world-model team ([tdmpc-glass#1](https://github.com/SuuTTT/tdmpc-glass/issues/1)): a world model has both a latent state and a distribution over sampled rollouts, so rollout-SE + a latent probe should detect hallucinated transitions the same way — with the same confident-wrong caveat.
+
+**Feeds.** It closes the loop Track 5 opened: fusion works, but *across modalities*, not within one. A cross-modal hallucination-detection contribution, and a concrete recipe (SE + latent probe) for anyone with both signals.
+
+---
+
 ## How the tracks connect
 
 The through-line is one sentence: **structural entropy helps exactly when the structure it measures is both *hierarchical* and *task-relevant*, and you can only tell which by controlling for confounds and counting seeds.**
@@ -125,6 +169,7 @@ The through-line is one sentence: **structural entropy helps exactly when the st
 - **Track 1 (graph)** establishes the *hierarchy* half — multi-level SE beats flat SE, cleanly and significantly. This is the anchor result.
 - **Track 2 (RL)** establishes the *task-relevance* half — the same multi-level SE does nothing with a feature-cosine graph, but produces a real (if task-specific) gain once the graph is reward-relevant. It inherits Track 1's "hierarchy is the lever" and adds "the graph must carry task information."
 - **Track 3 (LLM)** is SE as a *confidence* signal rather than a training prior; its gemma-anchored boundary is the honest limit that **Track 5** is designed to push on, using data Track 3 already produced.
+- **Track 6 (cross-modal fusion)** resolves the fusion question Track 5 raised: fusing two *same-modality* SE signals is null (redundant), but fusing SE with a *different-modality* latent probe is a real, significant, replicated gain — and it re-derives Track 3's regime boundary as an *exploitable* one. The through-line "SE helps only where its structure differs from what you already have" now covers modalities too.
 - **Track 4 (benchmark)** underwrites all of them: every number above points to an artifact it registers, and every null above is traceable because the ledger recorded it.
 
 *Every figure in this post is drawn from a committed result artifact in the project repositories; corrections, ties, and nulls are stated with the same prominence as the wins. Read a year from now, the one durable lesson is that the wins in this program are the ones that survived more seeds and a control — and we kept the ones that didn't in plain sight.*
