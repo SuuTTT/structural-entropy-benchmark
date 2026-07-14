@@ -99,7 +99,21 @@ All numbers below are read from result files on the box (logs, `.npz`/`.npy` art
 | instruct / TriviaQA | 0.669 | 0.707 |
 | instruct / NQ | **0.502** (chance) | **0.649** |
 
-**Diversity-training fixes the fragility.** Pooling just two datasets turns the collapsing chance-level cells into solid detectors (+0.14 and +0.15 AUROC), at minimal cost to the strong cell — exactly the documented "diversity > volume" effect, and precisely the robustness TSV lacks. A consolidated benchmark (a 3-dataset pooled probe over TruthfulQA + TriviaQA + NQ, validation-selected, fused with cached semantic entropy, with bootstrap confidence intervals) is **running now** on both GPUs; it will give the head-to-head "diversity-probe + SE vs TSV vs SE" verdict.
+**Diversity-training fixes the fragility.** Pooling just two datasets turns the collapsing chance-level cells into solid detectors (+0.14 and +0.15 AUROC), at minimal cost to the strong cell — exactly the documented "diversity > volume" effect, and precisely the robustness TSV lacks.
+
+**The 3-dataset head-to-head (verified, honest — no clean broad SOTA win):** a validation-selected pooled probe over TruthfulQA + TriviaQA + NQ, vs semantic entropy, naive fusion, and a rule-based *instance gate* (trust SE when samples disagree, the probe when they agree). AUROC:
+
+| cell | div-probe | SE | gate | TSV (SOTA) |
+|---|---|---|---|---|
+| base / TruthfulQA | **0.840** | 0.657 | 0.806 | 0.844 |
+| base / TriviaQA | 0.810 | 0.815 | **0.837** | 0.736 |
+| base / NQ | 0.585 | **0.759** | 0.697 | 0.667 |
+| instruct / TriviaQA | 0.656 | 0.680 | **0.690** | **0.856** |
+| instruct / NQ | 0.531 | **0.719** | 0.650 | 0.22 |
+
+Findings, stated plainly: **(1)** a *simple* diversity-trained linear probe **matches TSV on base/TruthfulQA (0.840 vs 0.844) and beats it on base/TriviaQA (0.810 vs 0.736)** — a trivial classifier rivaling the elaborate SOTA. **(2)** SE is the robust workhorse (it beats TSV on every cell where TSV is weak or broken). **(3)** The instance gate **beats both single signals when they are comparable** (TriviaQA) but **dilutes the stronger one when they are not** (NQ) — the regime boundary, re-derived as a combiner limitation. **(4)** Null: naive/gated *learned* fusion never beat the best single signal. **(5)** Diagnosed: the 3-dataset pool *hurt* NQ (0.585 vs 0.705 for the 2-dataset pool) because TruthfulQA (817 examples, a different regime) **dominated** the pool — a **class/size-balanced** pool is the fix, untested here.
+
+**Bottom line so far:** no single *deployable* detector cleanly beats SOTA across all cells; the honest wins are narrow (probe matches TSV on base; gate wins where signals are balanced). The likely path to a *broad* win is a genuinely strong-everywhere probe — i.e. the universal probe below — so fusion has two strong signals instead of one strong and one weak.
 
 **Honest constraint:** this box is offline with a broken model/dataset download backend, so the pool is **capped at three cached datasets**. The full "universal probe" (40+ datasets) needs a different box (see below).
 
