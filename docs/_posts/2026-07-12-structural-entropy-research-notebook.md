@@ -26,7 +26,7 @@ description: "Structural entropy is a single information-theoretic measure of ho
 | 3 | SeSE (LLM confidence) | `██████████` 100% | **done**, gemma-anchored | chain-SE beats answer-SE only under overconfidence, gemma family only ($\mathrm{corr}\approx0.75$) |
 | 4 | Benchmark / provenance audit | `████████░░` continuous | **live** | 2 equation-transcription errors fixed; ledger current |
 | 5 | SeSE within-SE fusion | `██████████` tested | **NULL** | answer-SE + chain-SE redundant (both output-space) |
-| 6 | **TSV + SE cross-modal fusion** | `████████░░` ~85% | 3 datasets done + bootstrap-tested; **cross-model run in flight** | latent+SE fusion **+11pp** TriviaQA (95% CI [+1.1,+19.1]); regime-dependent |
+| 6 | **TSV + SE cross-modal fusion** | `██████████` 100% | done (4 model×dataset cells) | latent+SE fusion **+11pp** TriviaQA (95% CI [+1.1,+19.1]); gain needs SE≳probe — flat when either collapses **or** the probe alone dominates (instruct) |
 
 **Two live compute jobs right now:**
 
@@ -156,7 +156,16 @@ We also debunked our own earlier cross-family "lead": a Mistral result that look
 
 The pattern is the whole result: **where a model errs from genuine uncertainty (TriviaQA, nq_open), sampled generations disagree, SE is strong — often as strong as the latent probe — and the two are complementary (corr 0.34, even *negative* on nq_open), so fusion adds ~+9–11 pp.** Where a model errs by being *confidently wrong* (TruthfulQA), samples agree on the same falsehood, SE collapses to chance, and only the latent probe works — fusion adds nothing. A 2000-resample bootstrap confirms the TriviaQA gain is real (95% CI [+1.1, +19.1] pp, $p\approx0.024$); the nq_open gain is directionally identical but underpowered at $n=100$ (CI includes 0). This is the same regime boundary as Track 3 — SE detects hallucination under genuine uncertainty, fails under confident-wrongness — now shown to be *exploitable*: pair SE with a latent probe and you cover both regimes.
 
-**In flight.** A cross-model run (Qwen2.5-7B-**Instruct**, same pipeline, offline) is testing whether the regime story holds beyond the base model; a cross-*family* run (llama, Yi) was blocked by gated / incomplete model caches. We also filed the transferable takeaways as an issue for a world-model team ([tdmpc-glass#1](https://github.com/SuuTTT/tdmpc-glass/issues/1)): a world model has both a latent state and a distribution over sampled rollouts, so rollout-SE + a latent probe should detect hallucinated transitions the same way — with the same confident-wrong caveat.
+**The cross-model tightening — the honest rule.** We re-ran the whole pipeline on Qwen2.5-7B-**Instruct** (base-vs-instruct; a cross-*family* run on llama/Yi was blocked by gated / incomplete model caches). The result refines the claim rather than simply confirming it: on the instruct model SE is *still* strong under uncertainty (0.693, so the regime story holds), but **fusion is flat (−0.07pp)** — because the instruct model's latent probe alone is now near-ceiling (TSV 0.856), so SE, though individually informative, is *redundant given the probe*. Putting the four cells together, the defensible rule is: **cross-modal fusion pays off only when errors are uncertainty-driven (so SE is informative) *and* neither modality dominates the other.** It is flat when SE collapses (confident-wrong, TruthfulQA) or when the probe alone is already strong (instruct). Complementarity (corr 0.24–0.34) is necessary but not sufficient — you also need the two views to be *comparably* strong. That is a sharper, more useful statement than "fusion helps under uncertainty."
+
+| model / dataset | NLI-SE | TSV (probe) | fusion Δ | reads as |
+|---|---|---|---|---|
+| Qwen-base / TruthfulQA | 0.556 | 0.844 | +0.85 pp | SE collapses → flat |
+| Qwen-base / TriviaQA | 0.817 | 0.736 | **+11.1 pp** (sig) | SE ≥ probe → big |
+| Qwen-base / nq_open | 0.667 | 0.667 | +9.4 pp | SE ≈ probe → big |
+| Qwen-instruct / TriviaQA | 0.693 | 0.856 | −0.07 pp | probe dominates → flat |
+
+We also filed the transferable takeaways as an issue for a world-model team ([tdmpc-glass#1](https://github.com/SuuTTT/tdmpc-glass/issues/1)): a world model has both a latent state and a distribution over sampled rollouts, so rollout-SE + a latent probe should detect hallucinated transitions the same way — with the same confident-wrong caveat, *and* the same "fuse only if neither dominates" rule.
 
 **Feeds.** It closes the loop Track 5 opened: fusion works, but *across modalities*, not within one. A cross-modal hallucination-detection contribution, and a concrete recipe (SE + latent probe) for anyone with both signals.
 
