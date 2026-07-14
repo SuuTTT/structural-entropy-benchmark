@@ -165,6 +165,8 @@ The pattern is the whole result: **where a model errs from genuine uncertainty (
 | Qwen-base / nq_open | 0.667 | 0.667 | +9.4 pp | SE ≈ probe → big |
 | Qwen-instruct / TriviaQA | 0.693 | 0.856 | −0.07 pp | probe dominates → flat |
 
+A fifth cell we ran — Qwen-instruct / nq_open — is *reported as a caveat, not a data point*: TSV's steering-vector training **diverged** there (test AUROC drifted from 0.58 at epoch 1 down to 0.22), so its probe is invalid and the fusion number is an artifact. The one trustworthy reading from it is that **SE alone reaches 0.924** — a very strong standalone detector — which both reinforces "SE is strong under genuine uncertainty" and, since SE-alone there *beats* the fused score, again fits the "fuse only if neither dominates" rule. It also flags an honest limitation: TSV training is not uniformly stable across every model×dataset.
+
 We also filed the transferable takeaways as an issue for a world-model team ([tdmpc-glass#1](https://github.com/SuuTTT/tdmpc-glass/issues/1)): a world model has both a latent state and a distribution over sampled rollouts, so rollout-SE + a latent probe should detect hallucinated transitions the same way — with the same confident-wrong caveat, *and* the same "fuse only if neither dominates" rule.
 
 **Feeds.** It closes the loop Track 5 opened: fusion works, but *across modalities*, not within one. A cross-modal hallucination-detection contribution, and a concrete recipe (SE + latent probe) for anyone with both signals.
