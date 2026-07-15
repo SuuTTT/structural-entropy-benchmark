@@ -1,0 +1,9 @@
+#### qwen7b n_te=366 pos=0.47 | baseline SE_temp=0.7223
+   META          AUROC=0.7883  d_vs_SEtemp=+0.0660[+0.008,+0.126]
+   GATED_META    AUROC=0.7883  d_vs_SEtemp=+0.0660[+0.009,+0.126]
+#### qwen7bi n_te=450 pos=0.58 | baseline SE_temp=0.6639
+   META          AUROC=0.7283  d_vs_SEtemp=+0.0644[+0.012,+0.117]
+   GATED_META    AUROC=0.7283  d_vs_SEtemp=+0.0644[+0.010,+0.118]
+#### llama8b n_te=450 pos=0.28 | baseline SE_temp=0.5845
+   META          AUROC=0.6872  d_vs_SEtemp=+0.1027[+0.029,+0.174]
+   GATED_META    AUROC=0.6872  d_vs_SEtemp=+0.1027[+0.033,+0.174]
