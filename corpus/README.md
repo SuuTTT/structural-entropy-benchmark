@@ -13,7 +13,7 @@ Files: [`corpus.bib`](corpus.bib) (BibTeX for all 84 papers) and [`corpus.csv`](
 **Role:** Obj = objective, Pri = prior, Met = metric, Reg = regularizer, Fea = feature, Rob = robustness.
 **Sup.:** U = unsupervised, S = supervised, SS = self-supervised, Se = semi-supervised.
 **Output:** Part = partition, Tree = tree, Sc = score, PG = pooled graph, Em = embedding, Rew = rewired graph, Pol = policy.
-"--" = no value; multi-valued cells are comma-separated.
+"–" = no value; multi-valued cells are comma-separated.
 
 ## Theory and combinatorial algorithms (36 papers)
 
